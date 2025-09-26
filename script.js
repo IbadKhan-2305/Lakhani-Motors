@@ -1,6 +1,7 @@
 /* ============================
-   script.js — Lakhani Motors
-   ============================ */
+   script.js — Full Version
+   Inventory + Navbar + Hamburger
+============================ */
 
 /* ---------- NAVBAR STICKY + SMOOTH SCROLL ---------- */
 (function() {
@@ -20,6 +21,30 @@
       if (target) target.scrollIntoView({ behavior: 'smooth' });
     });
   });
+})();
+
+/* ---------- HAMBURGER MENU TOGGLE WITH SLIDE ---------- */
+(function() {
+  const hamburger = document.querySelector('.hamburger');
+  const navLinks = document.querySelector('.nav-links');
+
+  if (hamburger && navLinks) {
+    hamburger.addEventListener('click', () => {
+      if (navLinks.classList.contains('show-menu')) {
+        // Close menu
+        navLinks.style.maxHeight = '0';
+        navLinks.style.opacity = '0';
+        setTimeout(() => navLinks.classList.remove('show-menu'), 500);
+      } else {
+        // Open menu
+        navLinks.classList.add('show-menu');
+        setTimeout(() => {
+          navLinks.style.maxHeight = navLinks.scrollHeight + 'px';
+          navLinks.style.opacity = '1';
+        }, 10);
+      }
+    });
+  }
 })();
 
 /* ---------- HERO / SHOWCASE STAGGERED ON LOAD ---------- */
@@ -130,25 +155,4 @@ window.addEventListener('load', () => {
 
   // Always start on page 1
   renderInventory();
-})();
-
-/* ---------- MOBILE HAMBURGER MENU ---------- */
-(function() {
-  const hamburger = document.querySelector('.hamburger');
-  const navLinks = document.querySelector('.nav-links');
-
-  if (hamburger && navLinks) {
-    hamburger.addEventListener('click', () => {
-      navLinks.classList.toggle('show-menu');
-    });
-
-    // Close menu when a link is clicked
-    navLinks.querySelectorAll('a').forEach(link => {
-      link.addEventListener('click', () => {
-        if (navLinks.classList.contains('show-menu')) {
-          navLinks.classList.remove('show-menu');
-        }
-      });
-    });
-  }
 })();

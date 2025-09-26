@@ -1,7 +1,3 @@
-/* ================================
-   style.css — Full Lakhani Motors
-   ================================ */
-
 /* Fonts & Body */
 body {
   margin: 0;
@@ -54,13 +50,58 @@ h1, h2, h3, h4, h5 {
   text-shadow: 0 0 10px gold;
 }
 
-/* Hamburger menu (hidden by default) */
+/* Hamburger for mobile */
 .hamburger {
   display: none;
-  font-size: 2rem;
+  flex-direction: column;
   cursor: pointer;
-  color: gold;
+  gap: 5px;
+  z-index: 1100;
 }
+.hamburger span {
+  width: 25px;
+  height: 3px;
+  background: gold;
+  border-radius: 2px;
+}
+
+/* Mobile menu hidden by default with transition */
+.nav-links {
+  transition: max-height 0.5s ease-in-out, opacity 0.5s ease-in-out;
+  overflow: hidden;
+}
+.nav-links.show-menu {
+  display: flex !important;
+  flex-direction: column;
+  position: absolute;
+  top: 70px;
+  right: 20px;
+  background: #111;
+  padding: 15px 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 15px gold;
+  gap: 15px;
+  max-height: 500px;
+  opacity: 1;
+}
+
+/* Initially hide menu */
+.nav-links {
+  max-height: 0;
+  opacity: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Animate individual links */
+.nav-links li {
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+.nav-links.show-menu li {
+  transform: translateY(0);
+  opacity: 1;
+}
+
 
 /* Hero Section */
 .hero-section {
@@ -107,7 +148,7 @@ h1, h2, h3, h4, h5 {
   box-shadow: 0 0 15px gold;
 }
 
-/* Showcase */
+/* Showcase Cars */
 .showcase {
   padding: 50px 20px;
   background: #000;
@@ -135,7 +176,7 @@ h1, h2, h3, h4, h5 {
   box-shadow: 0 0 15px gold;
 }
 
-/* About */
+/* About Section */
 .about-section {
   padding: 50px 20px;
   background: #111;
@@ -221,7 +262,7 @@ h1, h2, h3, h4, h5 {
   transition: 0.3s;
 }
 
-/* Mission & Vision Section */
+/* Mission Section */
 .mission-section {
   padding: 50px 20px;
   background: #111;
@@ -253,10 +294,9 @@ h1, h2, h3, h4, h5 {
 .mission-card:hover {
   box-shadow: 0 0 15px gold;
   transform: translateY(-5px);
-  transition: 0.3s;
 }
 
-/* Contact */
+/* Contact Section */
 .contact-section {
   padding: 50px 20px;
   background: #001100;
@@ -378,35 +418,14 @@ h1, h2, h3, h4, h5 {
 @media (max-width:768px){
   .hero-title{font-size:3.5rem;}
   .hero-subtitle{font-size:1.2rem;}
-  .navbar ul{flex-direction:column; gap:10px;}
-  .hamburger { display: block; }
-  .nav-links { display: none; }
+  .navbar ul {
+    display: none;
+  }
+  .hamburger {
+    display: flex;
+  }
 }
 @media (max-width:480px){
   .hero-title{font-size:2.5rem;}
   .hero-subtitle{font-size:1rem;}
-  .navbar ul{flex-direction:column; gap:8px;}
-}
-
-/* ==============================
-   MOBILE HAMBURGER MENU
-   ============================== */
-.nav-links.show-menu {
-  display: flex !important;
-  position: absolute;
-  top: 70px;
-  right: 20px;
-  background: #111;
-  padding: 15px;
-  border-radius: 8px;
-  flex-direction: column;
-  gap: 15px;
-  box-shadow: 0 0 15px rgba(255,215,0,0.3);
-  animation: slideDown 0.3s ease forwards;
-}
-
-/* Slide down animation */
-@keyframes slideDown {
-  0% { opacity: 0; transform: translateY(-20px); }
-  100% { opacity: 1; transform: translateY(0); }
 }
