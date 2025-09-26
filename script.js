@@ -1,6 +1,5 @@
 /* ============================
-   script.js — cleaned version
-   Inventory pagination + site JS
+   script.js — Lakhani Motors
    ============================ */
 
 /* ---------- NAVBAR STICKY + SMOOTH SCROLL ---------- */
@@ -131,4 +130,25 @@ window.addEventListener('load', () => {
 
   // Always start on page 1
   renderInventory();
+})();
+
+/* ---------- MOBILE HAMBURGER MENU ---------- */
+(function() {
+  const hamburger = document.querySelector('.hamburger');
+  const navLinks = document.querySelector('.nav-links');
+
+  if (hamburger && navLinks) {
+    hamburger.addEventListener('click', () => {
+      navLinks.classList.toggle('show-menu');
+    });
+
+    // Close menu when a link is clicked
+    navLinks.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        if (navLinks.classList.contains('show-menu')) {
+          navLinks.classList.remove('show-menu');
+        }
+      });
+    });
+  }
 })();

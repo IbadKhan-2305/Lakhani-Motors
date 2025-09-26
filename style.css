@@ -1,8 +1,12 @@
-/* Fonts */
+/* ================================
+   style.css — Full Lakhani Motors
+   ================================ */
+
+/* Fonts & Body */
 body {
   margin: 0;
   font-family: 'Roboto', sans-serif;
-  background: #111; /* Theme background color */
+  background: #111;
   color: #fff;
 }
 h1, h2, h3, h4, h5 {
@@ -48,6 +52,14 @@ h1, h2, h3, h4, h5 {
 .navbar ul li a:hover {
   color: gold;
   text-shadow: 0 0 10px gold;
+}
+
+/* Hamburger menu (hidden by default) */
+.hamburger {
+  display: none;
+  font-size: 2rem;
+  cursor: pointer;
+  color: gold;
 }
 
 /* Hero Section */
@@ -367,9 +379,34 @@ h1, h2, h3, h4, h5 {
   .hero-title{font-size:3.5rem;}
   .hero-subtitle{font-size:1.2rem;}
   .navbar ul{flex-direction:column; gap:10px;}
+  .hamburger { display: block; }
+  .nav-links { display: none; }
 }
 @media (max-width:480px){
   .hero-title{font-size:2.5rem;}
   .hero-subtitle{font-size:1rem;}
   .navbar ul{flex-direction:column; gap:8px;}
+}
+
+/* ==============================
+   MOBILE HAMBURGER MENU
+   ============================== */
+.nav-links.show-menu {
+  display: flex !important;
+  position: absolute;
+  top: 70px;
+  right: 20px;
+  background: #111;
+  padding: 15px;
+  border-radius: 8px;
+  flex-direction: column;
+  gap: 15px;
+  box-shadow: 0 0 15px rgba(255,215,0,0.3);
+  animation: slideDown 0.3s ease forwards;
+}
+
+/* Slide down animation */
+@keyframes slideDown {
+  0% { opacity: 0; transform: translateY(-20px); }
+  100% { opacity: 1; transform: translateY(0); }
 }
