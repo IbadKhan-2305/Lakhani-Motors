@@ -1,11 +1,13 @@
 /* ============================
-   script.js — Full Version
-   Inventory + Navbar + Hamburger
-============================ */
+   script.js — full replacement
+   ============================ */
 
-/* ---------- NAVBAR STICKY + SMOOTH SCROLL ---------- */
+/* ---------- NAVBAR STICKY + SMOOTH SCROLL + HAMBURGER ---------- */
 (function() {
   const navbar = document.querySelector('.navbar');
+  const hamburger = document.querySelector('.hamburger');
+  const navLinks = document.querySelector('.nav-links');
+
   if (navbar) {
     window.addEventListener('scroll', () => {
       if (window.scrollY > 50) navbar.classList.add('sticky');
@@ -19,30 +21,17 @@
       e.preventDefault();
       const target = document.querySelector(this.getAttribute('href'));
       if (target) target.scrollIntoView({ behavior: 'smooth' });
+      // Close mobile menu on click
+      if (navLinks.classList.contains('mobile-active')) {
+        navLinks.classList.remove('mobile-active');
+      }
     });
   });
-})();
 
-/* ---------- HAMBURGER MENU TOGGLE WITH SLIDE ---------- */
-(function() {
-  const hamburger = document.querySelector('.hamburger');
-  const navLinks = document.querySelector('.nav-links');
-
-  if (hamburger && navLinks) {
+  // Hamburger toggle
+  if (hamburger) {
     hamburger.addEventListener('click', () => {
-      if (navLinks.classList.contains('show-menu')) {
-        // Close menu
-        navLinks.style.maxHeight = '0';
-        navLinks.style.opacity = '0';
-        setTimeout(() => navLinks.classList.remove('show-menu'), 500);
-      } else {
-        // Open menu
-        navLinks.classList.add('show-menu');
-        setTimeout(() => {
-          navLinks.style.maxHeight = navLinks.scrollHeight + 'px';
-          navLinks.style.opacity = '1';
-        }, 10);
-      }
+      navLinks.classList.toggle('mobile-active');
     });
   }
 })();

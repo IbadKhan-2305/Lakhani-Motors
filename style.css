@@ -1,4 +1,4 @@
-/* Fonts & Body */
+/* Fonts */
 body {
   margin: 0;
   font-family: 'Roboto', sans-serif;
@@ -50,58 +50,32 @@ h1, h2, h3, h4, h5 {
   text-shadow: 0 0 10px gold;
 }
 
-/* Hamburger for mobile */
+/* Hamburger Menu */
 .hamburger {
   display: none;
   flex-direction: column;
-  cursor: pointer;
   gap: 5px;
-  z-index: 1100;
+  cursor: pointer;
 }
 .hamburger span {
   width: 25px;
   height: 3px;
-  background: gold;
+  background: #fff;
   border-radius: 2px;
 }
 
-/* Mobile menu hidden by default with transition */
-.nav-links {
-  transition: max-height 0.5s ease-in-out, opacity 0.5s ease-in-out;
-  overflow: hidden;
-}
-.nav-links.show-menu {
-  display: flex !important;
+/* Mobile nav active */
+.nav-links.mobile-active {
+  display: flex;
   flex-direction: column;
   position: absolute;
   top: 70px;
   right: 20px;
   background: #111;
-  padding: 15px 20px;
+  padding: 15px 25px;
   border-radius: 10px;
-  box-shadow: 0 0 15px gold;
-  gap: 15px;
-  max-height: 500px;
-  opacity: 1;
+  box-shadow: 0 0 15px rgba(255,215,0,0.5);
 }
-
-/* Initially hide menu */
-.nav-links {
-  max-height: 0;
-  opacity: 0;
-  display: flex;
-  flex-direction: column;
-}
-
-/* Animate individual links */
-.nav-links li {
-  transition: transform 0.3s ease, opacity 0.3s ease;
-}
-.nav-links.show-menu li {
-  transform: translateY(0);
-  opacity: 1;
-}
-
 
 /* Hero Section */
 .hero-section {
@@ -148,7 +122,7 @@ h1, h2, h3, h4, h5 {
   box-shadow: 0 0 15px gold;
 }
 
-/* Showcase Cars */
+/* Showcase */
 .showcase {
   padding: 50px 20px;
   background: #000;
@@ -176,7 +150,7 @@ h1, h2, h3, h4, h5 {
   box-shadow: 0 0 15px gold;
 }
 
-/* About Section */
+/* About */
 .about-section {
   padding: 50px 20px;
   background: #111;
@@ -262,7 +236,7 @@ h1, h2, h3, h4, h5 {
   transition: 0.3s;
 }
 
-/* Mission Section */
+/* Mission & Vision Section */
 .mission-section {
   padding: 50px 20px;
   background: #111;
@@ -294,9 +268,10 @@ h1, h2, h3, h4, h5 {
 .mission-card:hover {
   box-shadow: 0 0 15px gold;
   transform: translateY(-5px);
+  transition: 0.3s;
 }
 
-/* Contact Section */
+/* Contact */
 .contact-section {
   padding: 50px 20px;
   background: #001100;
@@ -418,12 +393,8 @@ h1, h2, h3, h4, h5 {
 @media (max-width:768px){
   .hero-title{font-size:3.5rem;}
   .hero-subtitle{font-size:1.2rem;}
-  .navbar ul {
-    display: none;
-  }
-  .hamburger {
-    display: flex;
-  }
+  .navbar ul { display: none; } /* Hide default nav */
+  .hamburger { display: flex; } /* Show hamburger */
 }
 @media (max-width:480px){
   .hero-title{font-size:2.5rem;}
