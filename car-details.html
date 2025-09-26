@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Car Details - LAKHANI MOTORS</title>
+<link rel="stylesheet" href="style.css">
+<style>
+  body {
+    background-color: #111; 
+    color: #fff;
+    font-family: Arial, sans-serif;
+    transition: opacity 0.6s ease;
+    opacity: 0;
+  }
+  .navbar {
+    background-color: #000;
+    color: #FFD700; /* yellow accents */
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+  .navbar .logo {
+    font-weight: bold;
+    font-size: 1.5rem;
+    color: #FFD700;
+  }
+  .nav-links li {
+    display: inline-block;
+    margin-left: 20px;
+  }
+  .nav-links a {
+    color: #FFD700;
+    text-decoration: none;
+    font-weight: bold;
+  }
+  .container {
+    max-width: 900px;
+    margin: 50px auto 80px;
+    padding: 0 20px;
+  }
+  h1 { font-size: 2rem; margin-bottom: 10px; }
+  p { margin: 5px 0; color: #FFD700; }
+  .slider-container {
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+    margin: 20px 0;
+  }
+  .slider-images {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+  }
+  .slider-images img {
+    min-width: 100%;
+    max-height: 450px;
+    object-fit: cover;
+    border-radius: 10px;
+    user-select: none;
+  }
+  .arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(255,215,0,0.8);
+    color: #111;
+    border: none;
+    font-size: 2rem;
+    padding: 8px 14px;
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 10;
+    transition: background 0.3s;
+  }
+  .arrow:hover { background: rgba(255,215,0,1); }
+  .arrow-left { left: 10px; }
+  .arrow-right { right: 10px; }
+  .back-btn {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 8px 14px;
+    background: #FFD700;
+    color: #111;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 6px;
+    transition: background 0.3s;
+  }
+  .back-btn:hover { background: #FFC107; }
+</style>
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="logo">LAKHANI MOTORS</div>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="inventory.html">Inventory</a></li>
+    <li><a href="index.html#about">About Us</a></li>
+    <li><a href="index.html#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<section class="car-details-page">
+  <div class="container">
+    <h1 id="car-name">Car Name</h1>
+    <p id="car-price">Price</p>
+    <p id="car-mileage">Mileage</p>
+    <p id="car-transmission">Transmission</p>
+
+    <div class="slider-container">
+      <button class="arrow arrow-left">&#8592;</button>
+      <div class="slider-images" id="car-gallery">
+        <!-- Images inserted dynamically -->
+      </div>
+      <button class="arrow arrow-right">&#8594;</button>
+    </div>
+
+    <a href="inventory.html" class="back-btn">← Back to Inventory</a>
+  </div>
+</section>
+
+<script src="car-details.js"></script>
+<script>
+  // Page fade-in for smooth transition from inventory
+  window.addEventListener('load', () => { document.body.style.opacity = 1; });
+</script>
+</body>
+</html>

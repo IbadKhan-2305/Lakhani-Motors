@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Inventory - LAKHANI MOTORS</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<nav class="navbar">
+  <a href="index.html" class="logo">LAKHANI MOTORS</a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="inventory.html" class="active">Inventory</a></li>
+    <li><a href="index.html#about">About Us</a></li>
+    <li><a href="index.html#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<section class="inventory-page">
+  <h1>Our Inventory</h1>
+  <div id="inventory-grid" class="inventory-grid"></div>
+  <div class="pagination">
+    <button id="prev-page">&#8592; Previous</button>
+    <span id="page-info">Page 1</span>
+    <button id="next-page">Next &#8594;</button>
+  </div>
+</section>
+
+<script src="script.js"></script>
+<script>
+  // Sliding Page Transition
+  document.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', function(e) {
+      const href = this.getAttribute('href');
+      if(href && href !== '#' && !href.startsWith('mailto') && !href.startsWith('https://wa')) {
+        e.preventDefault();
+        document.body.style.transition = "transform 0.6s ease-in-out";
+        document.body.style.transform = "translateX(100%)";
+        setTimeout(() => {
+          window.location.href = href;
+        }, 600);
+      }
+    });
+  });
+</script>
+</body>
+</html>
