@@ -1,150 +1,180 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>LAKHANI MOTORS</title>
-<link rel="stylesheet" href="style.css">
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Roboto:wght@400;500&family=Cinzel:wght@400;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-<link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
-<style>
-  body { background-color: #1a1a1a; color: #fff; }
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LAKHANI MOTORS</title>
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Roboto:wght@400;500&family=Cinzel:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
+
+  <style>
+    body {
+      background-color: #1a1a1a;
+      color: #fff;
+    }
+  </style>
 </head>
 <body>
+  <!-- Navbar -->
+  <nav class="navbar" data-aos="fade-down">
+    <a href="index.html" class="logo">LAKHANI MOTORS</a>
+    <div class="hamburger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+    <ul class="nav-links">
+      <li><a href="#hero">Home</a></li>
+      <li><a href="inventory.html">Inventory</a></li>
+      <li><a href="#about">About Us</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
 
-<!-- Navbar -->
-<nav class="navbar" data-aos="fade-down">
-  <a href="index.html" class="logo">LAKHANI MOTORS</a>
-  <div class="hamburger">
-    <span></span>
-    <span></span>
-    <span></span>
+  <!-- Hero Section -->
+  <section id="hero" class="hero-section" data-aos="fade-up">
+    <div class="hero-text" data-aos="fade-up" data-aos-delay="100">
+      <h1 class="hero-title">LEGACY</h1>
+      <p class="hero-subtitle">Excellence in Motion</p>
+      <a href="inventory.html" class="gold-btn" data-aos="fade-up" data-aos-delay="200">Explore Inventory</a>
+    </div>
+  </section>
+
+  <!-- Showcase Cars -->
+  <section class="showcase" data-aos="fade-up">
+    <div class="showcase-grid">
+      <div class="showcase-car" data-aos="zoom-in">
+        <img src="https://picsum.photos/400/300?random=101" alt="Car 1">
+        <h3>Mercedes S-Class</h3>
+        <p>$120,000</p>
+      </div>
+      <div class="showcase-car" data-aos="zoom-in" data-aos-delay="50">
+        <img src="https://picsum.photos/400/300?random=102" alt="Car 2">
+        <h3>Rolls Royce Phantom</h3>
+        <p>$450,000</p>
+      </div>
+      <div class="showcase-car" data-aos="zoom-in" data-aos-delay="100">
+        <img src="https://picsum.photos/400/300?random=103" alt="Car 3">
+        <h3>BMW 7 Series</h3>
+        <p>$110,000</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Us Section -->
+<section id="about" class="about-section" data-aos="fade-up">
+  <h2 data-aos="fade-up" data-aos-delay="50">About Lakhani Motors</h2>
+  <p data-aos="fade-up" data-aos-delay="100">
+    Founded in 2000, Lakhani Motors has grown from its humble beginnings into a prestigious international dealership with a head office in Japan and thriving showrooms in Uganda, Kenya, and Dubai. Established by Asif Memon Lakhani and Abubakar Memon Lakhani, our brand was built on the foundation of trust, reliability, and excellence in service.
+  </p>
+  <p data-aos="fade-up" data-aos-delay="150">
+    With over 2,000 vehicles sold, we proudly cater to a wide spectrum of clients — from first-time buyers to luxury enthusiasts — always delivering quality and peace of mind. Our services extend beyond sales, offering competitive financing options, after-sales support, and personalized consultation to make every purchase seamless.
+  </p>
+  <p data-aos="fade-up" data-aos-delay="200">
+    At Lakhani Motors, we believe prestige is not just in the cars we sell, but in the trusted experience we provide. Our team ensures every client enjoys unmatched value, best prices, and a relationship built on transparency. Whether in Uganda, Kenya, or Dubai, we are committed to setting the gold standard in automotive excellence.
+  </p>
+
+  <div class="about-values">
+    <div class="value-card" data-aos="fade-up" data-aos-delay="250">
+      <h3>Excellence</h3>
+      <p>We strive for perfection in every service and vehicle delivered.</p>
+    </div>
+    <div class="value-card" data-aos="fade-up" data-aos-delay="300">
+      <h3>Luxury</h3>
+      <p>Delivering world-class vehicles with premium customer experience.</p>
+    </div>
+    <div class="value-card" data-aos="fade-up" data-aos-delay="350">
+      <h3>Innovation</h3>
+      <p>Staying ahead with modern technology and automotive trends.</p>
+    </div>
   </div>
-  <ul class="nav-links">
-    <li><a href="#hero">Home</a></li>
-    <li><a href="inventory.html">Inventory</a></li>
-    <li><a href="#about">About Us</a></li>
-    <li><a href="#contact">Contact</a></li>
-  </ul>
-</nav>
 
-<!-- Hero Section -->
-<section id="hero" class="hero-section" data-aos="fade-up">
-  <div class="hero-text" data-aos="fade-up" data-aos-delay="100">
-    <h1 class="hero-title">LEGACY</h1>
-    <p class="hero-subtitle">Excellence in Motion</p>
-    <a href="inventory.html" class="gold-btn" data-aos="fade-up" data-aos-delay="200">Explore Inventory</a>
+  <!-- Stats below value cards -->
+  <div class="about-stats" data-aos="fade-up" data-aos-delay="400">
+    <span>2000+ Cars Sold</span>
+    <span>3 International Showrooms</span>
+    <span>25+ Years of Excellence</span>
   </div>
 </section>
 
-<!-- Showcase Cars -->
-<section class="showcase" data-aos="fade-up">
-  <div class="showcase-grid">
-    <div class="showcase-car" data-aos="zoom-in">
-      <img src="https://picsum.photos/400/300?random=101" alt="Car 1">
-      <h3>Mercedes S-Class</h3>
-      <p>$120,000</p>
-    </div>
-    <div class="showcase-car" data-aos="zoom-in" data-aos-delay="50">
-      <img src="https://picsum.photos/400/300?random=102" alt="Car 2">
-      <h3>Rolls Royce Phantom</h3>
-      <p>$450,000</p>
-    </div>
-    <div class="showcase-car" data-aos="zoom-in" data-aos-delay="100">
-      <img src="https://picsum.photos/400/300?random=103" alt="Car 3">
-      <h3>BMW 7 Series</h3>
-      <p>$110,000</p>
-    </div>
-  </div>
-</section>
 
-<section class="about-section" id="about">
-  <h2>About Us</h2>
-  <div class="about-text">
-    <p>
-      Founded in 2000, Lakhani Motors has grown from its humble beginnings into a
-      prestigious international dealership with a head office in Japan and thriving
-      showrooms in Uganda, Kenya, and Dubai. Established by Asif Memon Lakhani and
-      Abubakar Memon Lakhani, our brand was built on the foundation of trust,
-      reliability, and excellence in service.
+    <!-- Stats below value cards -->
+    <div class="about-stats" data-aos="fade-up" data-aos-delay="200">
+      <span>2000+ Cars Sold</span>
+      <span>3 International Showrooms</span>
+      <span>25+ Years of Excellence</span>
+    </div>
+  </section>
+
+  <!-- Services Section -->
+  <section class="services-section" data-aos="fade-up">
+    <h2 class="section-title" data-aos="fade-up" data-aos-delay="50">Our Services</h2>
+    <p class="section-subtitle" data-aos="fade-up" data-aos-delay="100">Excellence in Every Drive</p>
+    <div class="services-grid">
+      <div class="service-card" data-aos="fade-up" data-aos-delay="50">
+        <i class="fas fa-car"></i>
+        <h3>Luxury Car Sales</h3>
+        <p>Explore our collection of premium vehicles from top global brands, handpicked for quality and elegance.</p>
+      </div>
+      <div class="service-card" data-aos="fade-up" data-aos-delay="100">
+        <i class="fas fa-tools"></i>
+        <h3>Car Maintenance</h3>
+        <p>Professional servicing and maintenance to ensure your vehicle stays in peak condition at all times.</p>
+      </div>
+      <div class="service-card" data-aos="fade-up" data-aos-delay="150">
+        <i class="fas fa-handshake"></i>
+        <h3>Financing Options</h3>
+        <p>Flexible financing and leasing solutions tailored to your lifestyle and needs.</p>
+      </div>
+      <div class="service-card" data-aos="fade-up" data-aos-delay="200">
+        <i class="fas fa-road"></i>
+        <h3>Test Drives</h3>
+        <p>Experience the luxury first-hand with our hassle-free test drive booking service.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Mission & Vision Section -->
+  <section class="mission-section" data-aos="fade-up">
+    <div class="mission-container">
+      <div class="mission-card" data-aos="fade-up" data-aos-delay="50">
+        <h2>Our Mission</h2>
+        <p>To redefine luxury and performance in the automotive industry by offering our customers premium vehicles, world-class service, and an unmatched buying experience.</p>
+      </div>
+      <div class="mission-card" data-aos="fade-up" data-aos-delay="100">
+        <h2>Our Vision</h2>
+        <p>To become the leading luxury car dealership in the region, where innovation, trust, and customer satisfaction drive every decision we make.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="contact-section" data-aos="fade-up">
+    <h2 data-aos="fade-up" data-aos-delay="50">Contact Us</h2>
+    <p data-aos="fade-up" data-aos-delay="100">
+      Email: <a href="mailto:info@lakhanimotors.com">info@lakhanimotors.com</a>
     </p>
-    <p>
-      With over 2,000 vehicles sold, we proudly cater to a wide spectrum of clients —
-      from first-time buyers to luxury enthusiasts — always delivering quality and
-      peace of mind. Our services extend beyond sales, offering competitive financing
-      options, after-sales support, and personalized consultation to make every
-      purchase seamless.
+    <p data-aos="fade-up" data-aos-delay="150">
+      WhatsApp: <a href="https://wa.me/256777777666">Click to Chat</a>
     </p>
-    <p>
-      At Lakhani Motors, we believe prestige is not just in the cars we sell, but in
-      the trusted experience we provide. Our team ensures every client enjoys
-      unmatched value, best prices, and a relationship built on transparency. Whether
-      in Uganda, Kenya, or Dubai, we are committed to setting the gold standard in
-      automotive excellence.
-    </p>
-  </div>
-</section>
 
-<!-- Services Section -->
-<section class="services-section" data-aos="fade-up">
-  <h2 class="section-title" data-aos="fade-up" data-aos-delay="50">Our Services</h2>
-  <p class="section-subtitle" data-aos="fade-up" data-aos-delay="100">Excellence in Every Drive</p>
-  <div class="services-grid">
-    <div class="service-card" data-aos="fade-up" data-aos-delay="50">
-      <i class="fas fa-car"></i>
-      <h3>Luxury Car Sales</h3>
-      <p>Explore our collection of premium vehicles from top global brands.</p>
+    <div class="social-links">
+      <a href="https://www.facebook.com/lakhanimotorsltd" class="social-icon" data-aos="fade-up" data-aos-delay="200">FB</a>
+      <a href="https://x.com/MotorsLakhani" class="social-icon" data-aos="fade-up" data-aos-delay="250">X</a>
+      <a href="https://www.instagram.com/lakhanimotors/" class="social-icon" data-aos="fade-up" data-aos-delay="300">IG</a>
+      <a href="https://www.tiktok.com/@lakhanimotors_ug" class="social-icon" data-aos="fade-up" data-aos-delay="350">TT</a>
     </div>
-    <div class="service-card" data-aos="fade-up" data-aos-delay="100">
-      <i class="fas fa-tools"></i>
-      <h3>Car Maintenance</h3>
-      <p>Professional servicing to ensure your vehicle stays in peak condition.</p>
-    </div>
-    <div class="service-card" data-aos="fade-up" data-aos-delay="150">
-      <i class="fas fa-handshake"></i>
-      <h3>Financing Options</h3>
-      <p>Flexible financing and leasing solutions tailored to your needs.</p>
-    </div>
-    <div class="service-card" data-aos="fade-up" data-aos-delay="200">
-      <i class="fas fa-road"></i>
-      <h3>Test Drives</h3>
-      <p>Experience luxury first-hand with hassle-free test drives.</p>
-    </div>
-  </div>
-</section>
+  </section>
 
-<!-- Mission & Vision Section -->
-<section class="mission-section" data-aos="fade-up">
-  <div class="mission-container">
-    <div class="mission-card" data-aos="fade-up" data-aos-delay="50">
-      <h2>Our Mission</h2>
-      <p>To redefine luxury and performance by offering premium vehicles and unmatched service.</p>
-    </div>
-    <div class="mission-card" data-aos="fade-up" data-aos-delay="100">
-      <h2>Our Vision</h2>
-      <p>To become the leading luxury car dealership in the region, driven by trust and innovation.</p>
-    </div>
-  </div>
-</section>
-
-<!-- Contact Section -->
-<section id="contact" class="contact-section" data-aos="fade-up">
-  <h2 data-aos="fade-up" data-aos-delay="50">Contact Us</h2>
-  <p data-aos="fade-up" data-aos-delay="100">Email: <a href="mailto:info@lakhanimotors.com">info@lakhanimotors.com</a></p>
-  <p data-aos="fade-up" data-aos-delay="150">WhatsApp: <a href="https://wa.me/your-number">Click to Chat</a></p>
-  <div class="social-links">
-    <a href="#" class="social-icon" data-aos="fade-up" data-aos-delay="200">FB</a>
-    <a href="#" class="social-icon" data-aos="fade-up" data-aos-delay="250">TW</a>
-    <a href="#" class="social-icon" data-aos="fade-up" data-aos-delay="300">IG</a>
-  </div>
-</section>
-
-<script src="script.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
-<script>
-  AOS.init({ duration: 300, once: true });
-</script>
+  <!-- Scripts -->
+  <script src="script.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+  <script>
+    AOS.init({ duration: 400, once: true });
+  </script>
 </body>
 </html>
