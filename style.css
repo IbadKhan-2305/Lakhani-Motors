@@ -56,6 +56,21 @@ h1, h2, h3, h4, h5 {
   text-shadow: 0 0 10px gold;
 }
 
+/* Navbar Glow on Scroll */
+.navbar.scrolled {
+  background: rgba(17, 17, 17, 0.95);
+  box-shadow: 0 0 12px gold, 0 0 25px gold;
+  border-bottom: 1px solid rgba(255, 215, 0, 0.4);
+  transition: all 0.3s ease-in-out;
+}
+
+.navbar.glow {
+  box-shadow: 0 0 20px rgba(255, 215, 0, 0.7), 0 0 40px rgba(255, 215, 0, 0.5);
+  transition: box-shadow 0.3s ease-in-out;
+}
+
+
+
 /* Hamburger Menu */
 .hamburger {
   display: none;
@@ -231,6 +246,7 @@ h1, h2, h3, h4, h5 {
   box-shadow: 0 0 15px gold;
 }
 
+
 /* Services Section */
 .services-section {
   padding: 50px 20px;
@@ -329,44 +345,184 @@ h1, h2, h3, h4, h5 {
   transition: 0.3s;
 }
 
-/* Contact */
-.contact-section {
+/* Financing Section */
+.financing-section {
   padding: 50px 20px;
-  background: #001100;
+  background: #000;
   text-align: center;
 }
 
-.contact-section a {
-  color: gold;
-  text-decoration: none;
+.financing-section .section-title {
+  font-size: 3rem;
+  margin-bottom: 10px;
 }
 
-/* Social Icons - small circle effect */
+.financing-section .section-subtitle {
+  font-size: 1.5rem;
+  margin-bottom: 40px;
+  color: gold;
+}
+
+.calculator {
+  max-width: 600px;
+  margin: 0 auto 40px auto;
+  background: #111;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: left;
+  position: relative;
+}
+
+.calculator h3 {
+  color: gold;
+  margin-bottom: 15px;
+}
+
+.calculator input {
+  width: calc(100% - 20px);
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  border: none;
+}
+
+.calculator button {
+  padding: 10px 20px;
+  background: gold;
+  color: #000;
+  font-weight: 700;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.calculator button:hover {
+  box-shadow: 0 0 10px gold;
+}
+
+#loan-results p {
+  margin: 10px 0;
+  font-weight: 700;
+  color: #fff;
+}
+
+#loan-results span {
+  color: gold;
+}
+
+/* Autocomplete dropdown */
+.autocomplete-items {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  max-height: 180px;
+  overflow-y: auto;
+  background: #111;
+  border: 1px solid gold;
+  border-radius: 5px;
+  z-index: 1000;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.autocomplete-items li {
+  padding: 10px;
+  cursor: pointer;
+  color: #fff;
+  transition: 0.2s;
+}
+
+.autocomplete-items li:hover {
+  background: gold;
+  color: #000;
+}
+
+/* Contact Section */
+.contact-section {
+  padding: 50px 20px;
+  background: #001100; /* rich dark green, Rolex-inspired */
+  text-align: center;
+  color: #f8f5f0; /* light cream text for contrast */
+}
+
+.contact-section h2 {
+  font-size: 3rem;
+  margin-bottom: 15px;
+  color: #ffffff;
+  font-family: 'Playfair Display', serif;
+}
+
+.contact-section p {
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+  color: #f8f5f0;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.contact-section a {
+  color: #f8f5f0; /* cream links */
+  text-decoration: none;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.contact-section a:hover {
+  color: gold; /* subtle hover color */
+}
+
+/* WhatsApp / Email Text */
+.contact-whatsapp,
+.contact-email {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 500;
+  font-size: 1.2rem;
+  display: inline-block;
+  margin-bottom: 20px;
+  transition: color 0.3s ease;
+}
+
+.contact-whatsapp:hover,
+.contact-email:hover {
+  color: gold; /* subtle hover effect */
+}
+
+/* Social Icons - centered flex under WhatsApp/Email */
 .social-links {
   margin-top: 20px;
   display: flex;
   justify-content: center;
+  align-items: center;
   gap: 20px;
+  flex-wrap: wrap;
 }
 
 .social-icon {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 40px;
-  height: 40px;
-  background: #111;
+  width: 50px;
+  height: 50px;
+  background: #1b1a1a; /* cream circle */
   border-radius: 50%;
-  color: gold;
-  font-weight: bold;
-  transition: 0.3s;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.social-icon img {
+  width: 60%;
+  height: 60%;
+  object-fit: contain;
 }
 
 .social-icon:hover {
-  background: gold;
-  color: #000;
-  box-shadow: 0 0 10px gold;
+  transform: scale(1.1);
+  box-shadow: 0 0 8px gold; /* subtle hover */
 }
+
 
 /* Inventory */
 .inventory-page {

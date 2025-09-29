@@ -2,7 +2,7 @@
    script.js — full replacement
    ============================ */
 
-/* ---------- NAVBAR STICKY + SMOOTH SCROLL + HAMBURGER ---------- */
+/* ---------- NAVBAR STICKY + GLOW + SMOOTH SCROLL + HAMBURGER ---------- */
 (function() {
   const navbar = document.querySelector('.navbar');
   const hamburger = document.querySelector('.hamburger');
@@ -10,8 +10,11 @@
 
   if (navbar) {
     window.addEventListener('scroll', () => {
-      if (window.scrollY > 50) navbar.classList.add('sticky');
-      else navbar.classList.remove('sticky');
+      if (window.scrollY > 50) {
+        navbar.classList.add('sticky', 'glow'); // add glow
+      } else {
+        navbar.classList.remove('sticky', 'glow');
+      }
     });
   }
 
@@ -144,4 +147,94 @@ window.addEventListener('load', () => {
 
   // Always start on page 1
   renderInventory();
+})();
+
+/* ---------- GLOBAL CARS ARRAY INCLUDING FEATURED AND INVENTORY ---------- */
+const cars = [
+  // Featured Cars on Home Page
+  { id: 101, name: 'Mercedes S-Class', price: 120000 },
+  { id: 102, name: 'Rolls Royce Phantom', price: 450000 },
+  { id: 103, name: 'BMW 7 Series', price: 110000 },
+  // Inventory Cars
+  ...Array.from({length:30}, (_, i) => ({
+    id: i+1,
+    name: `Luxury Model ${i+1}`,
+    price: (150 + i) * 1000,
+    mileage: `${8 + i}000 km`,
+    transmission: (i % 2 === 0) ? 'Automatic' : 'Manual',
+    images: [
+      `https://picsum.photos/800/500?random=${i+1}`,
+      `https://picsum.photos/300/200?random=${i+31}`,
+      `https://picsum.photos/300/200?random=${i+61}`,
+      `https://picsum.photos/300/200?random=${i+91}`,
+      `https://picsum.photos/300/200?random=${i+121}`,
+      `https://picsum.photos/300/200?random=${i+151}`,
+    ]
+  }))
+];
+
+/* ---------- FINANCING CALCULATOR WITH AUTOCOMPLETE + ENTER KEY ---------- */
+(function() {
+  const searchInput = document.getElementById('car-search');
+  const calculateBtn = document.getElementById('calculate-btn');
+  const downPaymentEl = document.getElementById('down-payment');
+  const monthlyBalanceEl = document.getElementById('monthly-balance');
+  const autocompleteList = document.getElementById('autocomplete-list');
+
+  function showAutocomplete(val) {
+    autocompleteList.innerHTML = '';
+    if (!val) return;
+
+    const matches = cars.filter(c => c.name.toLowerCase().includes(val.toLowerCase()));
+    matches.forEach(c => {
+      const li = document.createElement('li');
+      li.innerText = c.name;
+      li.addEventListener('click', () => {
+        searchInput.value = c.name;
+        autocompleteList.innerHTML = '';
+        calculateLoan();
+      });
+      autocompleteList.appendChild(li);
+    });
+  }
+
+  function calculateLoan() {
+    const query = searchInput.value.trim().toLowerCase();
+    const car = cars.find(c => c.name.toLowerCase() === query);
+
+    if (!car) {
+      downPaymentEl.innerText = "$0";
+      monthlyBalanceEl.innerText = "$0";
+      alert('Car not found! Please select from the list.');
+      return;
+    }
+
+    const downPayment = car.price * 0.7;
+    const balance = (car.price - downPayment) / 6;
+
+    downPaymentEl.innerText = `$${downPayment.toLocaleString()}`;
+    monthlyBalanceEl.innerText = `$${balance.toLocaleString()}`;
+  }
+
+  if (searchInput) {
+    searchInput.addEventListener('input', (e) => {
+      showAutocomplete(e.target.value);
+    });
+
+    searchInput.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter') {
+        e.preventDefault();
+        autocompleteList.innerHTML = '';
+        calculateLoan();
+      }
+    });
+
+    document.addEventListener('click', (e) => {
+      if (e.target !== searchInput) autocompleteList.innerHTML = '';
+    });
+  }
+
+  if (calculateBtn) {
+    calculateBtn.addEventListener('click', calculateLoan);
+  }
 })();

@@ -31,6 +31,7 @@
       <li><a href="#hero">Home</a></li>
       <li><a href="inventory.html">Inventory</a></li>
       <li><a href="#about">About Us</a></li>
+      <li><a href="#financing">Financing</a></li> <!-- NEW -->
       <li><a href="#contact">Contact</a></li>
     </ul>
   </nav>
@@ -101,15 +102,6 @@
   </div>
 </section>
 
-
-    <!-- Stats below value cards -->
-    <div class="about-stats" data-aos="fade-up" data-aos-delay="200">
-      <span>2000+ Cars Sold</span>
-      <span>3 International Showrooms</span>
-      <span>25+ Years of Excellence</span>
-    </div>
-  </section>
-
   <!-- Services Section -->
   <section class="services-section" data-aos="fade-up">
     <h2 class="section-title" data-aos="fade-up" data-aos-delay="50">Our Services</h2>
@@ -152,23 +144,59 @@
     </div>
   </section>
 
-  <!-- Contact Section -->
-  <section id="contact" class="contact-section" data-aos="fade-up">
-    <h2 data-aos="fade-up" data-aos-delay="50">Contact Us</h2>
-    <p data-aos="fade-up" data-aos-delay="100">
-      Email: <a href="mailto:info@lakhanimotors.com">info@lakhanimotors.com</a>
-    </p>
-    <p data-aos="fade-up" data-aos-delay="150">
-      WhatsApp: <a href="https://wa.me/256777777666">Click to Chat</a>
-    </p>
+<!-- Financing Section -->
+<section id="financing" class="financing-section" data-aos="fade-up">
+  <h2 class="section-title" data-aos="fade-up" data-aos-delay="50">Financing</h2>
+  <p class="section-subtitle" data-aos="fade-up" data-aos-delay="100">Flexible Payment Options for Your Dream Car</p>
 
-    <div class="social-links">
-      <a href="https://www.facebook.com/lakhanimotorsltd" class="social-icon" data-aos="fade-up" data-aos-delay="200">FB</a>
-      <a href="https://x.com/MotorsLakhani" class="social-icon" data-aos="fade-up" data-aos-delay="250">X</a>
-      <a href="https://www.instagram.com/lakhanimotors/" class="social-icon" data-aos="fade-up" data-aos-delay="300">IG</a>
-      <a href="https://www.tiktok.com/@lakhanimotors_ug" class="social-icon" data-aos="fade-up" data-aos-delay="350">TT</a>
+  <!-- Loan Calculator -->
+  <div class="calculator" data-aos="fade-up" data-aos-delay="150">
+    <h3>Loan Calculator</h3>
+    <div class="autocomplete-wrapper" style="position: relative;">
+      <input type="text" id="car-search" placeholder="Type car name (e.g., Mercedes S-Class)" autocomplete="off">
+      <ul id="autocomplete-list" class="autocomplete-items"></ul>
     </div>
-  </section>
+    <button id="calculate-btn">Calculate</button>
+    <div id="loan-results">
+      <p>Down Payment: <span id="down-payment">$0</span></p>
+      <p>Monthly Balance (6 months): <span id="monthly-balance">$0</span></p>
+    </div>
+  </div>
+</section>
+
+  <!-- Contact Section -->
+<section id="contact" class="contact-section" data-aos="fade-up">
+  <h2 data-aos="fade-up" data-aos-delay="50">Contact Us</h2>
+  <p data-aos="fade-up" data-aos-delay="100">
+    Email: 
+    <a href="mailto:lakhanimotorsug@gmail.com" target="_blank" rel="noopener noreferrer">
+      lakhanimotorsug@gmail.com
+    </a>
+  </p>
+  <p data-aos="fade-up" data-aos-delay="150">
+    WhatsApp: 
+    <a href="https://wa.me/256777777666" target="_blank" rel="noopener noreferrer">
+      Connect with us
+    </a>
+  </p>
+
+  <div class="social-links">
+    <a href="https://www.facebook.com/lakhanimotorsltd" class="social-icon" target="_blank" rel="noopener noreferrer">
+      <img src="https://cdn-icons-png.flaticon.com/512/733/733547.png" alt="Facebook" />
+    </a>
+    <a href="https://www.instagram.com/lakhanimotors/" class="social-icon" target="_blank" rel="noopener noreferrer">
+      <img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="Instagram" />
+    </a>
+    <a href="https://www.tiktok.com/@lakhanimotors_ug" class="social-icon" target="_blank" rel="noopener noreferrer">
+      <img src="https://cdn-icons-png.flaticon.com/512/3046/3046123.png" alt="TikTok" />
+    </a>
+    <a href="https://twitter.com/lakhanimotors" class="social-icon" target="_blank" rel="noopener noreferrer">
+      <img src="https://cdn-icons-png.flaticon.com/512/733/733579.png" alt="Twitter" />
+    </a>
+  </div>
+</section>
+
+
 
   <!-- Scripts -->
   <script src="script.js"></script>
