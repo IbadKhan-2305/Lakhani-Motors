@@ -1,9 +1,5 @@
 /* ============================
-<<<<<<< HEAD
-   script.js — full replacement
-=======
    script.js — Full Final Version
->>>>>>> 0cba6d2 (Update website files)
    ============================ */
 
 /* ---------- NAVBAR STICKY + GLOW + SMOOTH SCROLL + HAMBURGER ---------- */
@@ -59,8 +55,6 @@ window.addEventListener('load', () => {
   } catch (e) { /* ignore if elements absent */ }
 });
 
-<<<<<<< HEAD
-=======
 /* ---------- INVENTORY: CARS DATA ---------- */
 const cars = [
   {
@@ -539,45 +533,17 @@ const cars = [
   }
 ];
 
->>>>>>> 0cba6d2 (Update website files)
 /* ---------- INVENTORY: RENDER + PAGINATION ---------- */
 (function() {
   const inventoryGrid = document.getElementById('inventory-grid');
   if (!inventoryGrid) return; // only run on inventory page
 
-<<<<<<< HEAD
-  // Sample data (30 cars)
-  const cars = [];
-  for (let i = 1; i <= 30; i++) {
-    cars.push({
-      id: i,
-      name: `Luxury Model ${i}`,
-      price: `$${(150 + i) * 1000}`,
-      mileage: `${8 + i}000 km`,
-      transmission: (i % 2 === 0) ? 'Automatic' : 'Manual',
-      images: [
-        `https://picsum.photos/800/500?random=${i}`,       // main
-        `https://picsum.photos/300/200?random=${i+30}`,
-        `https://picsum.photos/300/200?random=${i+60}`,
-        `https://picsum.photos/300/200?random=${i+90}`,
-        `https://picsum.photos/300/200?random=${i+120}`,
-        `https://picsum.photos/300/200?random=${i+150}`,
-      ]
-    });
-  }
-
-=======
->>>>>>> 0cba6d2 (Update website files)
   let currentPage = 1;
   const carsPerPage = 10;
   const pageInfoEl = document.getElementById('page-info');
   const prevPageBtn = document.getElementById('prev-page');
   const nextPageBtn = document.getElementById('next-page');
 
-<<<<<<< HEAD
-  // Render current page
-=======
->>>>>>> 0cba6d2 (Update website files)
   function renderInventory() {
     inventoryGrid.innerHTML = '';
 
@@ -589,16 +555,10 @@ const cars = [
       const card = document.createElement('div');
       card.className = 'inventory-car';
 
-<<<<<<< HEAD
-      card.innerHTML = `
-        <div class="car-top">
-          <img class="main-img" src="${car.images[0]}" alt="${car.name}">
-=======
       const mainImage = car.images.length ? `${car.folder}/${car.images[0]}` : "";
       card.innerHTML = `
         <div class="car-top">
           <img class="main-img" src="${mainImage}" alt="${car.name}">
->>>>>>> 0cba6d2 (Update website files)
         </div>
 
         <div class="car-actions" style="display:flex;justify-content:flex-end;margin-top:12px;">
@@ -613,16 +573,6 @@ const cars = [
       inventoryGrid.appendChild(card);
 
       // style main image
-<<<<<<< HEAD
-      const mainImg = card.querySelector('.main-img');
-      mainImg.style.width = '720px';
-      mainImg.style.maxWidth = '100%';
-      mainImg.style.height = '360px';
-      mainImg.style.objectFit = 'cover';
-      mainImg.style.borderRadius = '10px';
-      mainImg.style.display = 'block';
-      mainImg.style.margin = '0 auto';
-=======
 const mainImg = card.querySelector('.main-img');
 mainImg.style.width = '720px';
 mainImg.style.maxWidth = '100%';
@@ -632,16 +582,11 @@ mainImg.style.borderRadius = '10px';
 mainImg.style.display = 'block';
 mainImg.style.margin = '0 auto';
 
->>>>>>> 0cba6d2 (Update website files)
     });
 
     if (pageInfoEl) pageInfoEl.innerText = `Page ${currentPage}`;
   }
 
-<<<<<<< HEAD
-  // Pagination handlers
-=======
->>>>>>> 0cba6d2 (Update website files)
   if (prevPageBtn) prevPageBtn.addEventListener('click', () => {
     if (currentPage > 1) {
       currentPage--;
@@ -649,10 +594,6 @@ mainImg.style.margin = '0 auto';
       window.scrollTo({ top: 0, behavior: 'smooth' });
     }
   });
-<<<<<<< HEAD
-=======
-
->>>>>>> 0cba6d2 (Update website files)
   if (nextPageBtn) nextPageBtn.addEventListener('click', () => {
     const maxPage = Math.ceil(cars.length / carsPerPage);
     if (currentPage < maxPage) {
@@ -662,102 +603,6 @@ mainImg.style.margin = '0 auto';
     }
   });
 
-<<<<<<< HEAD
-  // Always start on page 1
   renderInventory();
 })();
 
-/* ---------- GLOBAL CARS ARRAY INCLUDING FEATURED AND INVENTORY ---------- */
-const cars = [
-  // Featured Cars on Home Page
-  { id: 101, name: 'Mercedes S-Class', price: 120000 },
-  { id: 102, name: 'Rolls Royce Phantom', price: 450000 },
-  { id: 103, name: 'BMW 7 Series', price: 110000 },
-  // Inventory Cars
-  ...Array.from({length:30}, (_, i) => ({
-    id: i+1,
-    name: `Luxury Model ${i+1}`,
-    price: (150 + i) * 1000,
-    mileage: `${8 + i}000 km`,
-    transmission: (i % 2 === 0) ? 'Automatic' : 'Manual',
-    images: [
-      `https://picsum.photos/800/500?random=${i+1}`,
-      `https://picsum.photos/300/200?random=${i+31}`,
-      `https://picsum.photos/300/200?random=${i+61}`,
-      `https://picsum.photos/300/200?random=${i+91}`,
-      `https://picsum.photos/300/200?random=${i+121}`,
-      `https://picsum.photos/300/200?random=${i+151}`,
-    ]
-  }))
-];
-
-/* ---------- FINANCING CALCULATOR WITH AUTOCOMPLETE + ENTER KEY ---------- */
-(function() {
-  const searchInput = document.getElementById('car-search');
-  const calculateBtn = document.getElementById('calculate-btn');
-  const downPaymentEl = document.getElementById('down-payment');
-  const monthlyBalanceEl = document.getElementById('monthly-balance');
-  const autocompleteList = document.getElementById('autocomplete-list');
-
-  function showAutocomplete(val) {
-    autocompleteList.innerHTML = '';
-    if (!val) return;
-
-    const matches = cars.filter(c => c.name.toLowerCase().includes(val.toLowerCase()));
-    matches.forEach(c => {
-      const li = document.createElement('li');
-      li.innerText = c.name;
-      li.addEventListener('click', () => {
-        searchInput.value = c.name;
-        autocompleteList.innerHTML = '';
-        calculateLoan();
-      });
-      autocompleteList.appendChild(li);
-    });
-  }
-
-  function calculateLoan() {
-    const query = searchInput.value.trim().toLowerCase();
-    const car = cars.find(c => c.name.toLowerCase() === query);
-
-    if (!car) {
-      downPaymentEl.innerText = "$0";
-      monthlyBalanceEl.innerText = "$0";
-      alert('Car not found! Please select from the list.');
-      return;
-    }
-
-    const downPayment = car.price * 0.7;
-    const balance = (car.price - downPayment) / 6;
-
-    downPaymentEl.innerText = `$${downPayment.toLocaleString()}`;
-    monthlyBalanceEl.innerText = `$${balance.toLocaleString()}`;
-  }
-
-  if (searchInput) {
-    searchInput.addEventListener('input', (e) => {
-      showAutocomplete(e.target.value);
-    });
-
-    searchInput.addEventListener('keydown', (e) => {
-      if (e.key === 'Enter') {
-        e.preventDefault();
-        autocompleteList.innerHTML = '';
-        calculateLoan();
-      }
-    });
-
-    document.addEventListener('click', (e) => {
-      if (e.target !== searchInput) autocompleteList.innerHTML = '';
-    });
-  }
-
-  if (calculateBtn) {
-    calculateBtn.addEventListener('click', calculateLoan);
-  }
-})();
-=======
-  renderInventory();
-})();
-
->>>>>>> 0cba6d2 (Update website files)

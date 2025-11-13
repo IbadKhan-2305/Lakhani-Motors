@@ -345,104 +345,6 @@ h1, h2, h3, h4, h5 {
   transition: 0.3s;
 }
 
-<<<<<<< HEAD
-/* Financing Section */
-.financing-section {
-  padding: 50px 20px;
-  background: #000;
-  text-align: center;
-}
-
-.financing-section .section-title {
-  font-size: 3rem;
-  margin-bottom: 10px;
-}
-
-.financing-section .section-subtitle {
-  font-size: 1.5rem;
-  margin-bottom: 40px;
-  color: gold;
-}
-
-.calculator {
-  max-width: 600px;
-  margin: 0 auto 40px auto;
-  background: #111;
-  padding: 20px;
-  border-radius: 10px;
-  text-align: left;
-  position: relative;
-}
-
-.calculator h3 {
-  color: gold;
-  margin-bottom: 15px;
-}
-
-.calculator input {
-  width: calc(100% - 20px);
-  padding: 10px;
-  margin-bottom: 10px;
-  border-radius: 5px;
-  border: none;
-}
-
-.calculator button {
-  padding: 10px 20px;
-  background: gold;
-  color: #000;
-  font-weight: 700;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: 0.3s;
-}
-
-.calculator button:hover {
-  box-shadow: 0 0 10px gold;
-}
-
-#loan-results p {
-  margin: 10px 0;
-  font-weight: 700;
-  color: #fff;
-}
-
-#loan-results span {
-  color: gold;
-}
-
-/* Autocomplete dropdown */
-.autocomplete-items {
-  position: absolute;
-  top: 100%;
-  left: 0;
-  right: 0;
-  max-height: 180px;
-  overflow-y: auto;
-  background: #111;
-  border: 1px solid gold;
-  border-radius: 5px;
-  z-index: 1000;
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.autocomplete-items li {
-  padding: 10px;
-  cursor: pointer;
-  color: #fff;
-  transition: 0.2s;
-}
-
-.autocomplete-items li:hover {
-  background: gold;
-  color: #000;
-}
-
-=======
->>>>>>> 0cba6d2 (Update website files)
 /* Contact Section */
 .contact-section {
   padding: 50px 20px;
@@ -546,10 +448,6 @@ h1, h2, h3, h4, h5 {
   background: #000;
   padding: 20px;
   border-radius: 10px;
-<<<<<<< HEAD
-  position: relative;
-=======
->>>>>>> 0cba6d2 (Update website files)
   overflow: hidden;
   transition: 0.5s;
 }
@@ -560,14 +458,6 @@ h1, h2, h3, h4, h5 {
   object-fit: cover;
   border-radius: 10px;
 }
-<<<<<<< HEAD
-
-.details-btn {
-  position: absolute;
-  bottom: 20px;
-  right: 20px;
-  padding: 10px 15px;
-=======
 /* Hover effect */
 .inventory-car:hover {
   transform: translateY(-5px); /* slightly lifts the card */
@@ -589,17 +479,11 @@ h1, h2, h3, h4, h5 {
 .details-btn {
   padding: 8px 12px;
   font-size: 0.9rem;
->>>>>>> 0cba6d2 (Update website files)
   background: gold;
   border: none;
   color: #000;
   font-weight: 700;
   cursor: pointer;
-<<<<<<< HEAD
-  transition: 0.3s;
-}
-
-=======
   border-radius: 6px;
   margin-top: 8px; /* space below text */
   transition: 0.3s;
@@ -607,7 +491,6 @@ h1, h2, h3, h4, h5 {
 }
 
 
->>>>>>> 0cba6d2 (Update website files)
 .details-btn:hover {
   box-shadow: 0 0 10px gold;
 }
@@ -640,31 +523,6 @@ h1, h2, h3, h4, h5 {
   transform: scale(1.05);
   box-shadow: 0 0 10px gold;
 }
-<<<<<<< HEAD
-
-/* Pagination */
-.pagination {
-  display: flex;
-  justify-content: center;
-  gap: 10px;
-  margin-top: 20px;
-}
-
-.pagination button {
-  padding: 10px 20px;
-  border: none;
-  background: gold;
-  color: #000;
-  font-weight: 700;
-  cursor: pointer;
-  transition: 0.3s;
-}
-
-.pagination button:hover {
-  box-shadow: 0 0 10px gold;
-}
-
-=======
 .pagination {
   display: flex;
   justify-content: center; /* centers the whole pagination */
@@ -704,7 +562,6 @@ h1, h2, h3, h4, h5 {
 }
 
 
->>>>>>> 0cba6d2 (Update website files)
 /* Responsive adjustments */
 @media (max-width:1024px) {
   .hero-title { font-size: 5rem; }
@@ -721,8 +578,4 @@ h1, h2, h3, h4, h5 {
 @media (max-width:480px) {
   .hero-title { font-size: 2.5rem; }
   .hero-subtitle { font-size: 1rem; }
-<<<<<<< HEAD
 }
-=======
-}
->>>>>>> 0cba6d2 (Update website files)

@@ -1,27 +1,3 @@
-<<<<<<< HEAD
-// Full car array (same as script.js)
-const cars = [];
-for (let i = 1; i <= 30; i++) {
-  cars.push({
-    id: i,
-    name: `Luxury Model ${i}`,
-    price: `$${(150 + i) * 1000}`,
-    mileage: `${8 + i}000 km`,
-    transmission: (i % 2 === 0) ? 'Automatic' : 'Manual',
-    images: [
-      `https://picsum.photos/800/500?random=${i}`,
-      `https://picsum.photos/800/500?random=${i+30}`,
-      `https://picsum.photos/800/500?random=${i+60}`,
-      `https://picsum.photos/800/500?random=${i+90}`,
-      `https://picsum.photos/800/500?random=${i+120}`
-    ]
-  });
-}
-
-// Get car ID from URL
-const urlParams = new URLSearchParams(window.location.search);
-const carId = parseInt(urlParams.get('id'), 10);
-=======
 const cars = [
   {
     id: 1,
@@ -446,36 +422,21 @@ const cars = [
 // Get car ID from URL (default to Prado if missing)
 const urlParams = new URLSearchParams(window.location.search);
 const carId = parseInt(urlParams.get('id'), 10) || 1;
->>>>>>> 0cba6d2 (Update website files)
 const car = cars.find(c => c.id === carId);
 
 // DOM elements
 const nameEl = document.getElementById('car-name');
-<<<<<<< HEAD
-const priceEl = document.getElementById('car-price');
-const mileageEl = document.getElementById('car-mileage');
-const transEl = document.getElementById('car-transmission');
-=======
 const colorEl = document.getElementById('car-color');
 const transEl = document.getElementById('car-transmission');
 const modelEl = document.getElementById('car-model');
->>>>>>> 0cba6d2 (Update website files)
 const galleryEl = document.getElementById('car-gallery');
 
 if (car) {
   nameEl.textContent = car.name;
-<<<<<<< HEAD
-  priceEl.textContent = `Price: ${car.price}`;
-  mileageEl.textContent = `Mileage: ${car.mileage}`;
-  transEl.textContent = `Transmission: ${car.transmission}`;
-
-  // populate images
-=======
   colorEl.textContent = `Color: ${car.color}`;
   transEl.textContent = `Transmission: ${car.transmission}`;
   modelEl.textContent = `Model: ${car.model}`;
 
->>>>>>> 0cba6d2 (Update website files)
   galleryEl.innerHTML = car.images.map(src => `<img src="${src}" alt="${car.name}">`).join('');
 } else {
   nameEl.textContent = 'Car Not Found';
@@ -484,38 +445,23 @@ if (car) {
 
 // Slider functionality
 let currentIndex = 0;
-<<<<<<< HEAD
-const images = galleryEl.querySelectorAll('img');
-
-function showSlide(index) {
-  if (index < 0) currentIndex = images.length - 1;
-  else if (index >= images.length) currentIndex = 0;
-=======
 const imagesList = galleryEl.querySelectorAll('img');
 
 function showSlide(index) {
   if (imagesList.length === 0) return;
   if (index < 0) currentIndex = imagesList.length - 1;
   else if (index >= imagesList.length) currentIndex = 0;
->>>>>>> 0cba6d2 (Update website files)
   else currentIndex = index;
 
   const offset = -currentIndex * 100;
   galleryEl.style.transform = `translateX(${offset}%)`;
 }
 
-<<<<<<< HEAD
-document.querySelector('.arrow-left').addEventListener('click', () => showSlide(currentIndex - 1));
-document.querySelector('.arrow-right').addEventListener('click', () => showSlide(currentIndex + 1));
-
-// swipe for mobile
-=======
 // Arrow buttons
 document.querySelector('.arrow-left').addEventListener('click', () => showSlide(currentIndex - 1));
 document.querySelector('.arrow-right').addEventListener('click', () => showSlide(currentIndex + 1));
 
 // Swipe support for mobile
->>>>>>> 0cba6d2 (Update website files)
 let startX = 0;
 galleryEl.addEventListener('touchstart', e => { startX = e.touches[0].clientX; });
 galleryEl.addEventListener('touchend', e => {
