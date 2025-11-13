@@ -5,6 +5,162 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Inventory - LAKHANI MOTORS</title>
 <link rel="stylesheet" href="style.css">
+<<<<<<< HEAD
+=======
+<style>
+  body {
+    background-color: #111;
+    color: #FFD700;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+
+  .navbar {
+    background-color: #000;
+    color: #FFD700;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+
+  .navbar .logo {
+    font-weight: bold;
+    font-size: 1.5rem;
+    color: #FFD700;
+    text-decoration: none;
+  }
+
+  .nav-links li {
+    display: inline-block;
+    margin-left: 20px;
+  }
+
+  .nav-links a {
+    color: #FFD700;
+    text-decoration: none;
+    font-weight: bold;
+  }
+
+  .inventory-page {
+    text-align: center;
+    padding: 40px 20px;
+  }
+
+  h1 {
+    font-size: 2rem;
+    margin-bottom: 30px;
+  }
+
+  /* GRID: 2 cars per row */
+  .inventory-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+
+  /* Each car card */
+  .car-card {
+    background-color: #000;
+    border: 2px solid #FFD700;
+    border-radius: 15px;
+    overflow: hidden;
+    text-align: center;
+    transition: transform 0.3s ease;
+    position: relative; /* ADD THIS LINE */
+  }
+
+  .car-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    filter: blur(15px);
+    transform: scale(1.1);
+    z-index: 1;
+}
+
+  .car-card:hover {
+    transform: scale(1.03);
+  }
+
+  .car-card img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    border-bottom: 2px solid #FFD700;
+     position: relative; /* ADD THIS LINE */
+    z-index: 2;        /* ADD THIS LINE */
+    border-radius: 8px;
+  }
+
+  .car-card h3 {
+    margin: 10px 0 5px;
+    font-size: 1.2rem;
+  }
+
+  .car-card p {
+    margin: 5px 0;
+    color: #FFD700;
+  }
+
+  .car-card a {
+    display: inline-block;
+    margin: 10px 0 15px;
+    padding: 8px 14px;
+    background: #FFD700;
+    color: #111;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 6px;
+    transition: background 0.3s;
+  }
+
+  .car-card a:hover {
+    background: #FFC107;
+  }
+
+  .pagination {
+    margin-top: 30px;
+  }
+
+  .pagination button {
+    background: #FFD700;
+    color: #111;
+    border: none;
+    padding: 8px 14px;
+    border-radius: 6px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s;
+  }
+
+  .pagination button:hover {
+    background: #FFC107;
+  }
+
+  #page-info {
+    margin: 0 10px;
+  }
+
+  /* Responsive: 1 car per row on phones */
+  @media (max-width: 700px) {
+    .inventory-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
+>>>>>>> 0cba6d2 (Update website files)
 </head>
 <body>
 <nav class="navbar">
@@ -29,6 +185,7 @@
 
 <script src="script.js"></script>
 <script>
+<<<<<<< HEAD
   // Sliding Page Transition
   document.querySelectorAll('a').forEach(link => {
     link.addEventListener('click', function(e) {
@@ -40,6 +197,17 @@
         setTimeout(() => {
           window.location.href = href;
         }, 600);
+=======
+  // Smooth page transition
+  document.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', function(e) {
+      const href = this.getAttribute('href');
+      if (href && href !== '#' && !href.startsWith('mailto') && !href.startsWith('https://wa')) {
+        e.preventDefault();
+        document.body.style.transition = "transform 0.6s ease-in-out";
+        document.body.style.transform = "translateX(100%)";
+        setTimeout(() => { window.location.href = href; }, 600);
+>>>>>>> 0cba6d2 (Update website files)
       }
     });
   });
